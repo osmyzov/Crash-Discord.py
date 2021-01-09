@@ -50,14 +50,14 @@ async def crash(self, ctx, bet: int = None, coef: int = None):
                 if crashOutcome >= coef:
                     winCash = bet * coef - bet
                     roundWinCash = round(winCash)
-                    await ctx.send(content= ctx.author.mention, embed = discord.Embed(title="📈 Сломанный Краш", description=f"{ctx.author.name}, ты выиграл: **+{round(roundwincash)} :dollar:**\n\nКоэф: **{round(crashmultipler, 2)}**\nТы поставил на коэф: **{round(xmult,2)}**\nТвоя ставка: **{bet}**"))
+                    await ctx.send(content= ctx.author.mention, embed = discord.Embed(title="📈 Сломанный Краш", description=f"{ctx.author.name}, ты выиграл: **+{round(roundWinCash)} :dollar:**\n\nКоэф: **{round(crashOutcome, 2)}**\nТы поставил на коэф: **{round(coef,2)}**\nТвоя ставка: **{bet}**"))
 
                     #Тут уже входит в силу ваша база данных.
                     #переменная roundWinCash, это выигрыш пользователя.
 
                 #или проиграл :(
                 else:
-                    await ctx.send(content= ctx.author.mention, embed = discord.Embed(title="📈 Сломанный Краш", description=f"{ctx.author.name}, ты проиграл: **{bet} :dollar:**\n\nКоэф: **{round(crashmultipler, 2)}**\nТы поставил на коэф: **{round(xmult,2)}**\nТвоя ставка: **{bet}**"))
+                    await ctx.send(content= ctx.author.mention, embed = discord.Embed(title="📈 Сломанный Краш", description=f"{ctx.author.name}, ты проиграл: **{bet} :dollar:**\n\nКоэф: **{round(crashOutcome, 2)}**\nТы поставил на коэф: **{round(coef,2)}**\nТвоя ставка: **{bet}**"))
 
                     #Тут уже входит в силу ваша база данных.
                     #тут вы должны снять с баланса пользователя его ставку

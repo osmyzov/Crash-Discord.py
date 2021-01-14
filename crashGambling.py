@@ -11,6 +11,11 @@ from discord.ext import commands
 import math
 import random
 
+# Чтобы использовать новую версию ответов дискорда, скачайте версию discord.py==1.16.0 
+# pip install discord.py==1.16.0
+
+# После этого переименуй все ctx.send() на ctx.reply()
+
 @commands.command()
 async def crash(self, ctx, bet: int = None, coef: int = None):
     if bet is None:
